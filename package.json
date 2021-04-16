@@ -1,0 +1,62 @@
+{
+	"name": "haystack-units",
+	"description": "Project Haystack core units",
+	"keywords": [
+		"project haystack",
+		"haystack",
+		"core",
+		"units",
+		"typescript"
+	],
+	"license": "BSD-3-Clause",
+	"author": "Gareth Johnson",
+	"homepage": "https://github.com/j2inn/haystack-units",
+	"email": "support@j2inn.com",
+	"version": "1.0.5",
+	"module": "dist/index.es.js",
+	"main": "dist/index.js",
+	"scripts": {
+		"lint": "eslint --ext .ts .",
+		"format": "eslint --ext .ts . --fix && prettier-eslint --show-different --write \"$(pwd)/**/*.ts\"",
+		"test": "npm run lint",
+		"doc": "typedoc ./src --excludePrivate",
+		"build": "npm run build:clean && npm run build:units && tsc --project ./tsconfig.build.json && npx rollup --file=dist/index.es.js -- build/index.js && npx rollup --format=cjs --file=dist/index.js -- build/index.js && npx copyfiles -u 1 \"./build/**/*.d.ts\" ./dist",
+		"build:clean": "rimraf ./dist && rimraf ./build",
+		"build:units": "ts-node --compiler-options={\\\"module\\\":\\\"commonjs\\\"} ./units/buildUnits && npm run format",
+		"analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json",
+		"prepack": "npm run lint && npm test && npm run build"
+	},
+	"files": [
+		"dist/**/*",
+		"src/**/*"
+	],
+	"config": {
+		"unsafe-perm": true
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.39",
+		"@typescript-eslint/eslint-plugin": "^4.22.0",
+		"@typescript-eslint/parser": "^4.22.0",
+		"copyfiles": "^2.4.1",
+		"eslint": "^7.24.0",
+		"eslint-config-prettier": "^8.2.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"haystack-core": "2.0.12",
+		"npm-dts": "^1.3.9",
+		"npm-dts-webpack-plugin": "^1.3.7",
+		"prettier": "^2.2.1",
+		"prettier-eslint": "^12.0.0",
+		"prettier-eslint-cli": "^5.0.1",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.45.2",
+		"ts-loader": "^8.1.0",
+		"ts-node": "^9.1.0",
+		"typedoc": "^0.20.35",
+		"typescript": "^4.2.4",
+		"typescript-eslint-parser": "^22.0.0"
+	},
+	"peerDependencies": {
+		"haystack-core": "^2.0.12"
+	},
+	"sideEffects": false
+}
