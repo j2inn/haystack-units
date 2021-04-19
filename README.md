@@ -18,6 +18,10 @@ In order for units to be successfully used with HNum either the whole unit datab
 npm install haystack-core haystack-units
 ```
 
+## APIs
+
+Please click [here](http://j2-docs.s3-website-us-east-1.amazonaws.com/j2inn/haystack-units/index.html) for the API documentation.
+
 ## Importing
 
 To import the whole unit database into your application...
