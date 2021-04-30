@@ -15,6 +15,11 @@
 	"version": "1.0.5",
 	"module": "dist/index.es.js",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/j2inn/haystack-units"
+	},
 	"scripts": {
 		"lint": "eslint --ext .ts .",
 		"format": "eslint --ext .ts . --fix && prettier-eslint --show-different --write \"$(pwd)/**/*.ts\"",
@@ -27,8 +32,7 @@
 		"prepack": "npm run lint && npm test && npm run build"
 	},
 	"files": [
-		"dist/**/*",
-		"src/**/*"
+		"dist/**/*"
 	],
 	"config": {
 		"unsafe-perm": true
