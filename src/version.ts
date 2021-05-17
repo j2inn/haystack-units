@@ -4,4 +4,4 @@
  * Please do not manually edit this file!
  */
 
-export const version = '1618576550104'
+export const version = '1621268652811'
