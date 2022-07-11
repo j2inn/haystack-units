@@ -1427,6 +1427,13 @@ export const megawattHour = HUnit.define({
 	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'energy',
 })
+export const gigawattHour = HUnit.define({
+	ids: ['gigawatt_hour', 'GWh'],
+	scale: 3600000000000,
+	offset: 0,
+	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'energy',
+})
 export const btu = HUnit.define({
 	ids: ['btu', 'BTU'],
 	scale: 1054.852,
@@ -1498,14 +1505,14 @@ export const newtonMeter = HUnit.define({
 	quantity: 'energy',
 })
 export const cubicMetersNaturalGas = HUnit.define({
-	ids: ['cubic_meters_natural_gas', 'm³_gas'],
+	ids: ['cubic_meters_natural_gas', 'standard_cubic_meter', 'scm', 'm³_gas'],
 	scale: 37313432.83582089,
 	offset: 0,
 	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'energy',
 })
 export const cubicFeetNaturalGas = HUnit.define({
-	ids: ['cubic_feet_natural_gas', 'ft³_gas'],
+	ids: ['cubic_feet_natural_gas', 'standard_cubic_foot', 'scf', 'ft³_gas'],
 	scale: 1086498,
 	offset: 0,
 	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
