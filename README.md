@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/j2inn/haystack-units/actions/workflows/master-push.yaml">
-    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/j2inn/haystack-units/Master%20push" />
+    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/j2inn/haystack-units/master-push.yaml" />
   </a>
 
   <a href="https://github.com/j2inn/haystack-units/blob/master/LICENSE">
