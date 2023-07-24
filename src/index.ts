@@ -1244,6 +1244,20 @@ export const microgramsPerCubicMeter = HUnit.define({
 	dimensions: { kg: 1, m: -3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'density',
 })
+export const kilogramsPerLiter = HUnit.define({
+	ids: ['kilograms_per_liter', 'kg/L'],
+	scale: 0.001,
+	offset: 0,
+	dimensions: { kg: 1, m: -3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'density',
+})
+export const milligramsPerLiter = HUnit.define({
+	ids: ['milligrams_per_liter', 'mg/L'],
+	scale: 1e-9,
+	offset: 0,
+	dimensions: { kg: 1, m: -3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'density',
+})
 
 // electric charge
 export const coulomb = HUnit.define({
@@ -2736,6 +2750,13 @@ export const feetPerMinute = HUnit.define({
 	dimensions: { kg: 0, m: 1, sec: -1, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'velocity',
 })
+export const inchesPerHour = HUnit.define({
+	ids: ['inches_per_hour', 'in/h'],
+	scale: 0.000007055555555555556,
+	offset: 0,
+	dimensions: { kg: 0, m: 1, sec: -1, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'velocity',
+})
 export const millimetersPerSecond = HUnit.define({
 	ids: ['millimeters_per_second', 'mm/s'],
 	scale: 0.001,
@@ -2746,6 +2767,13 @@ export const millimetersPerSecond = HUnit.define({
 export const millimetersPerMinute = HUnit.define({
 	ids: ['millimeters_per_minute', 'mm/min'],
 	scale: 0.000016666666666666667,
+	offset: 0,
+	dimensions: { kg: 0, m: 1, sec: -1, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'velocity',
+})
+export const millimetersPerHour = HUnit.define({
+	ids: ['millimeters_per_hour', 'mm/h'],
+	scale: 2.7777777777777776e-7,
 	offset: 0,
 	dimensions: { kg: 0, m: 1, sec: -1, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'velocity',
