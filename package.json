@@ -61,6 +61,6 @@
 	},
 	"sideEffects": false,
 	"dependencies": {
-		"haystack-core": "^2.0.60"
+		"haystack-core": "^2.0.62"
 	}
 }
