@@ -13,6 +13,12 @@ export const percent = HUnit.define({
 	offset: 0,
 	quantity: 'dimensionless',
 })
+export const percentRelativeHumidity = HUnit.define({
+	ids: ['percent_relative_humidity', '%RH'],
+	scale: 0.01,
+	offset: 0,
+	quantity: 'dimensionless',
+})
 export const pixel = HUnit.define({
 	ids: ['pixel', 'px'],
 	scale: 1,
@@ -33,12 +39,6 @@ export const powerFactor = HUnit.define({
 })
 export const ph = HUnit.define({
 	ids: ['ph', 'pH'],
-	scale: 1,
-	offset: 0,
-	quantity: 'dimensionless',
-})
-export const percentRelativeHumidity = HUnit.define({
-	ids: ['percent_relative_humidity', '%RH'],
 	scale: 1,
 	offset: 0,
 	quantity: 'dimensionless',
@@ -1533,21 +1533,28 @@ export const cubicFeetNaturalGas = HUnit.define({
 	quantity: 'energy',
 })
 export const hundredCubicFeetNaturalGas = HUnit.define({
-	ids: ['hundred_cubic_feet_natural_gas'],
+	ids: ['hundred_cubic_feet_natural_gas', 'Hcf_natural_gas'],
+	scale: 108649800,
+	offset: 0,
+	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'energy',
+})
+export const centumCubicFeetNaturalGas = HUnit.define({
+	ids: ['centum_cubic_feet_natural_gas', 'Ccf_natural_gas'],
 	scale: 108649800,
 	offset: 0,
 	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'energy',
 })
 export const thousandCubicFeetNaturalGas = HUnit.define({
-	ids: ['thousand_cubic_feet_natural_gas'],
+	ids: ['thousand_cubic_feet_natural_gas', 'Mcf_natural_gas'],
 	scale: 1086498000,
 	offset: 0,
 	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'energy',
 })
 export const millionCubicFeetNaturalGas = HUnit.define({
-	ids: ['million_cubic_feet_natural_gas'],
+	ids: ['million_cubic_feet_natural_gas', 'MMcf_natural_gas'],
 	scale: 1086498000000,
 	offset: 0,
 	dimensions: { kg: 1, m: 2, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
@@ -1664,6 +1671,13 @@ export const megajoulesPerSquareFoot = HUnit.define({
 	dimensions: { kg: 1, m: 0, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'energy by area',
 })
+export const btuPerSquareFoot = HUnit.define({
+	ids: ['btu_per_square_foot', 'BTU/ft²'],
+	scale: 11354.33731957,
+	offset: 0,
+	dimensions: { kg: 1, m: 0, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'energy by area',
+})
 export const kilobtuPerSquareFoot = HUnit.define({
 	ids: ['kilobtu_per_square_foot', 'kBTU/ft²'],
 	scale: 11354337.31957,
@@ -1677,6 +1691,29 @@ export const megabtuPerSquareFoot = HUnit.define({
 	offset: 0,
 	dimensions: { kg: 1, m: 0, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'energy by area',
+})
+
+// energy by volume
+export const joulesPerCubicMeter = HUnit.define({
+	ids: ['joules_per_cubic_meter', 'J/m³'],
+	scale: 1,
+	offset: 0,
+	dimensions: { kg: 1, m: -1, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'energy by volume',
+})
+export const gigajoulesPerCubicMeter = HUnit.define({
+	ids: ['gigajoules_per_cubic_meter', 'GJ/m³'],
+	scale: 1000000000,
+	offset: 0,
+	dimensions: { kg: 1, m: -1, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'energy by volume',
+})
+export const kilowattHoursPerCubicMeter = HUnit.define({
+	ids: ['kilowatt_hours_per_cubic_meter', 'kWh/m³'],
+	scale: 3600000,
+	offset: 0,
+	dimensions: { kg: 1, m: -1, sec: -2, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'energy by volume',
 })
 
 // enthalpy
@@ -2658,7 +2695,7 @@ export const tenthsSecond = HUnit.define({
 	quantity: 'time',
 })
 export const second = HUnit.define({
-	ids: ['second', 'sec', 's'],
+	ids: ['second', 's', 'sec'],
 	scale: 1,
 	offset: 0,
 	dimensions: { kg: 0, m: 0, sec: 1, K: 0, A: 0, mol: 0, cd: 0 },
@@ -2672,7 +2709,7 @@ export const minute = HUnit.define({
 	quantity: 'time',
 })
 export const hour = HUnit.define({
-	ids: ['hour', 'hr', 'h'],
+	ids: ['hour', 'h', 'hr'],
 	scale: 3600,
 	offset: 0,
 	dimensions: { kg: 0, m: 0, sec: 1, K: 0, A: 0, mol: 0, cd: 0 },
@@ -2799,6 +2836,13 @@ export const knot = HUnit.define({
 	dimensions: { kg: 0, m: 1, sec: -1, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'velocity',
 })
+export const cubicFeetPerMinutePerSquareFoot = HUnit.define({
+	ids: ['cubic_feet_per_minute_per_square_foot', 'cfm/ft²'],
+	scale: 0.00508,
+	offset: 0,
+	dimensions: { kg: 0, m: 1, sec: -1, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'velocity',
+})
 
 // volume
 export const cubicMeter = HUnit.define({
@@ -2859,7 +2903,7 @@ export const cubicInch = HUnit.define({
 })
 export const cubicFoot = HUnit.define({
 	ids: ['cubic_foot', 'ft³'],
-	scale: 0.028317,
+	scale: 0.028316846592,
 	offset: 0,
 	dimensions: { kg: 0, m: 3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'volume',
@@ -2915,7 +2959,35 @@ export const imperialGallon = HUnit.define({
 })
 export const hectoCubicFoot = HUnit.define({
 	ids: ['hecto_cubic_foot', 'hft³'],
-	scale: 2.8317,
+	scale: 2.8316846592,
+	offset: 0,
+	dimensions: { kg: 0, m: 3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'volume',
+})
+export const hundredCubicFeet = HUnit.define({
+	ids: ['hundred_cubic_feet', 'Hcf'],
+	scale: 2.8316846592,
+	offset: 0,
+	dimensions: { kg: 0, m: 3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'volume',
+})
+export const centumCubicFeet = HUnit.define({
+	ids: ['centum_cubic_feet', 'Ccf'],
+	scale: 2.8316846592,
+	offset: 0,
+	dimensions: { kg: 0, m: 3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'volume',
+})
+export const thousandCubicFeet = HUnit.define({
+	ids: ['thousand_cubic_feet', 'Mcf'],
+	scale: 28.316846592,
+	offset: 0,
+	dimensions: { kg: 0, m: 3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
+	quantity: 'volume',
+})
+export const millionCubicFeet = HUnit.define({
+	ids: ['million_cubic_feet', 'MMcf'],
+	scale: 28316.846592,
 	offset: 0,
 	dimensions: { kg: 0, m: 3, sec: 0, K: 0, A: 0, mol: 0, cd: 0 },
 	quantity: 'volume',
